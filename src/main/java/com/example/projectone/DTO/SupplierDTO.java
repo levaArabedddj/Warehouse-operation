@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,6 +14,7 @@ public class SupplierDTO {
     private String nameProduct;
     private String numberPhone;
 
+    private List<ProductDTO> products;
 }
 
 

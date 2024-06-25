@@ -3,6 +3,7 @@ package com.example.projectone.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -31,6 +32,13 @@ public class Product {
 
     @ManyToMany(mappedBy = "products", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private Set<Warehouse>warehouseSet;
+
+    @ManyToOne
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProductImage> images;
 
     @Override
     public boolean equals(Object o) {

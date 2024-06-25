@@ -2,6 +2,7 @@ package com.example.projectone.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.util.List;
 
 @Entity
@@ -16,4 +17,7 @@ public class Client {
     private String phoneNumber;
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders;
+
+    @OneToOne(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Basket basket;
 }

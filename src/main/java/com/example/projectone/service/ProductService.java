@@ -6,7 +6,6 @@ import com.example.projectone.Entity.Product;
 import com.example.projectone.Repository.ProductRepo;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -23,6 +22,10 @@ public class ProductService {
     public Product createProduct(Product product){
         productRepo.save(product);
         return product;
+    }
+
+    public List<Product> getAllProductInSite() {
+        return productRepo.findAll();
     }
 
 

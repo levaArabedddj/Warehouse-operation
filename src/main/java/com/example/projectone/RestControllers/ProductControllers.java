@@ -1,4 +1,4 @@
-package com.example.projectone.Controllers;
+package com.example.projectone.RestControllers;
 
 import com.example.projectone.DTO.ProductDTO;
 import com.example.projectone.Entity.Product;

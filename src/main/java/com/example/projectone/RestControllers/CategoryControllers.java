@@ -1,8 +1,11 @@
-package com.example.projectone.Controllers;
+package com.example.projectone.RestControllers;
 
+import com.example.projectone.DTO.CategoryDTO;
 import com.example.projectone.Entity.Category;
 import com.example.projectone.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class CategoryControllers {
@@ -16,6 +19,15 @@ public class CategoryControllers {
     private Category createCategory(@RequestBody Category category){
         categoryService.createCategory(category);
         return category;
+    }
+
+    @GetMapping("/getAllCategories")
+    public List<CategoryDTO> getAllCategories() {
+        return categoryService.getAllCategory();
+    }
+    @GetMapping("/getCategoryById")
+    public CategoryDTO getCategoryById(@RequestParam long id){
+        return categoryService.getCategoryById(id);
     }
 
     @PutMapping("/updateCategory")

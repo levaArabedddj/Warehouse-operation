@@ -2,6 +2,7 @@ package com.example.projectone.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
